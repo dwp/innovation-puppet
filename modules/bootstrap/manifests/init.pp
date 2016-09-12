@@ -2,6 +2,9 @@
 # Boostrap class to push standard tools and configuration on to managed hosts.
 class bootstrap {
 	
+	# require freepuppet
+	include ::freepuppet
+	
 	# ensure everyones running off AWS standard time servers
 	class { '::ntp':
 		servers => [
