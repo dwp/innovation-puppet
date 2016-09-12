@@ -14,8 +14,8 @@ class freepuppet {
 	# ensure we have a cron in place which runs every 15min
 	cron { "freepuppet-run":
 		ensure => present,
-		command => "/usr/local/bin/freepuppet-run"
-		minute  => '*/15',
+		command => "/usr/local/bin/freepuppet-run",
+		minute  => '*/15'
 	}
 	
 	
