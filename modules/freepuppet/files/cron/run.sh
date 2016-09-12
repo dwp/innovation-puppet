@@ -4,6 +4,14 @@ MANIFEST_NAME_FILE=/etc/puppet/manifest
 NODE_NAME_FILE=/etc/puppet/certname
 LOCKFILE=/run/freepuppet-run.pid
 
+# must be running as root
+if [ "$EUID" -ne 0 ]; then
+	echo "=================================================="
+	echo "Puppet scripts must run as root - please use sudo."
+	echo "=================================================="
+	exit
+fi
+
 # Pull in our enviromental settings.
 echo "=================================================="
 MANIFEST_NAME=$(<$MANIFEST_NAME_FILE)
