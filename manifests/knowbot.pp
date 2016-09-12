@@ -4,7 +4,7 @@
  */
 node 'knowbot-app' {
   
-	include freepuppet
+	include ::freepuppet
   
 }
 
@@ -13,6 +13,6 @@ node 'knowbot-app' {
  */
 node 'knowbot-spark' {
 	
-	include freepuppet
+	include ::freepuppet
 	
 }
