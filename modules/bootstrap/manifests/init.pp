@@ -2,7 +2,8 @@
 # Boostrap class to push standard tools and configuration on to managed hosts.
 # @author jonty.bale@dwp.gsi.gov.uk
 #
-class bootstrap {
+class bootstrap
+{
 	
 	# require freepuppet
 	include ::freepuppet
