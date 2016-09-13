@@ -1,0 +1,35 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    garethr-docker (5.3.0)
+      puppetlabs-apt (<= 3.0.0, >= 1.8.0)
+      puppetlabs-stdlib (>= 4.1.0)
+      stahnma-epel (>= 0.0.6)
+    puppetlabs-apt (2.2.2)
+      puppetlabs-stdlib (< 5.0.0, >= 4.5.0)
+    puppetlabs-ntp (4.2.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
+    puppetlabs-stdlib (4.12.0)
+    stahnma-epel (1.2.2)
+      puppetlabs-stdlib (>= 3.0.0)
+
+GIT
+  remote: git@gitlab.itsshared.net:Innovation/puppet-module-bootstrap.git
+  ref: master
+  sha: 9c6760dc17dd68d6e326d72907970cfcd5253af0
+  specs:
+    dwpinnovation-bootstrap (0.0.1)
+
+GIT
+  remote: git@gitlab.itsshared.net:Innovation/puppet-module-freepuppet.git
+  ref: master
+  sha: a4447cf7de1525f68476e08871a1e9c68124b396
+  specs:
+    dwpinnovation-freepuppet (0.0.1)
+
+DEPENDENCIES
+  dwpinnovation-bootstrap (>= 0)
+  dwpinnovation-freepuppet (>= 0)
+  garethr-docker (>= 0)
+  puppetlabs-ntp (>= 0)
+
