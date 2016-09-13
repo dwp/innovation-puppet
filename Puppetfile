@@ -2,7 +2,6 @@ forge "https://forgeapi.puppetlabs.com"
 
 # include the libraries we require from the forge
 mod 'garethr-docker'
-mod 'puppetlabs-ntp'
 
 # add our own internal bootstrap modules
 mod 'dwpinnovation-bootstrap',
