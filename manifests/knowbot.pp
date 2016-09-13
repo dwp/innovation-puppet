@@ -5,6 +5,12 @@
 node 'knowbot-app' {
   
 	include ::bootstrap
+	
+	# setup docker environment
+	include 'docker'
+	class {'docker::compose': 
+	  ensure => present
+	}
   
 }
 
