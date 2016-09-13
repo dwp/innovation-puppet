@@ -1,2 +1,2 @@
 ---
-	freepuppet::ensure: present
+freepuppet::ensure: present

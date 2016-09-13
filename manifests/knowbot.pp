@@ -8,7 +8,7 @@ node 'knowbot-app' {
 	
 	# setup docker environment
 	include 'docker'
-	class {'docker::compose': 
+    class {'docker::compose': 
 	  ensure => present
 	}
   
