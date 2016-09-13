@@ -8,6 +8,6 @@ PUPPETDIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
 rsync -rv $PUPPETDIR/ ubuntu@knowbot-app:$TARGETDIR
 
 ssh -t ubuntu@knowbot-app << EOF
-sudo cp -r /home/ubuntu/puppet/* /etc/puppet
+sudo cp -r /home/ubuntu/puppet /etc/
 sudo freepuppet-run
 EOF
