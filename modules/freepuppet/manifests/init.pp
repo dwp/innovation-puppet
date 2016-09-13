@@ -1,4 +1,3 @@
-
 #
 # freepuppet moduled used to install the basics of a masterless puppet configuration.
 # @author jonty.bale@dwp.gsi.gov.uk
