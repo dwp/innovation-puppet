@@ -9,7 +9,6 @@ FORGE
       puppetlabs-stdlib (< 5.0.0, >= 4.5.0)
     puppetlabs-ntp (4.2.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
-    puppetlabs-pe_gem (0.2.0)
     puppetlabs-stdlib (4.12.0)
     stahnma-epel (1.2.2)
       puppetlabs-stdlib (>= 3.0.0)
@@ -17,16 +16,15 @@ FORGE
 GIT
   remote: git@gitlab.itsshared.net:Innovation/puppet-module-bootstrap.git
   ref: master
-  sha: 9414ac24cdf664c34086fdb86a0f087c7c4ce231
+  sha: dc206b4534d97b1c7fece14196b57ff2720fac09
   specs:
     dwpinnovation-bootstrap (0.0.1)
       puppetlabs-ntp (>= 0)
-      puppetlabs-pe_gem (>= 0)
 
 GIT
   remote: git@gitlab.itsshared.net:Innovation/puppet-module-freepuppet.git
   ref: master
-  sha: bbc6d958f4e429ecae6236c3fb66220aec52f521
+  sha: 6c11d54c7dc8efb7120a9163a71106ea57e07b72
   specs:
     dwpinnovation-freepuppet (0.0.1)
 
