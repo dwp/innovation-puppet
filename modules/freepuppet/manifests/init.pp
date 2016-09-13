@@ -2,8 +2,9 @@
 # freepuppet moduled used to install the basics of a masterless puppet configuration.
 # @author jonty.bale@dwp.gsi.gov.uk
 #
-class freepuppet
-{	
+class freepuppet (
+	$ensure = 'present'
+) {	
 	# ensure the run script is in place
 	file { "/usr/local/bin/freepuppet-run":
 		ensure => $ensure,
