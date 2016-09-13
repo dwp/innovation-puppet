@@ -24,7 +24,7 @@ GIT
 GIT
   remote: git@gitlab.itsshared.net:Innovation/puppet-module-freepuppet.git
   ref: master
-  sha: 6c11d54c7dc8efb7120a9163a71106ea57e07b72
+  sha: 4917af847b8fbde759559178a1242353c9908897
   specs:
     dwpinnovation-freepuppet (0.0.1)
 
