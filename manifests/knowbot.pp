@@ -8,6 +8,25 @@ node 'knowbot-app'
     class { '::docker::compose' :
         ensure => present
     }
+    
+    # ensure directories are ready for social-search-platform code
+    file { '/opt/social-search-platform':
+        ensure => directory,
+        mode   => 755,
+        user   => 'ubuntu',
+        group  => 'ubuntu',
+    }
+    # and setup dir for docker to store it's data within.
+    file { '/var/social-search-platform':
+        ensure => directory,
+        mode   => 755,
+    }
+    # and run our docker compose
+    docker_compose { '/opt/social-search-platform/docker-compose.yml':
+      ensure  => present,
+      options => '-f /opt/social-search-platform/docker-compose.prod.yml'
+    }
+    
 }
 
 # Node used for runnin the Spark / EMR enviroment for generating the social graph.
