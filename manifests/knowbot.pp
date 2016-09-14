@@ -13,8 +13,8 @@ node 'knowbot-app'
     file { '/opt/social-search-platform':
         ensure => directory,
         mode   => 755,
-        user   => 'ubuntu',
-        group  => 'ubuntu',
+        owner  => 'ubuntu',
+        group  => 'ubuntu'
     }
     # and setup dir for docker to store it's data within.
     file { '/var/social-search-platform':
