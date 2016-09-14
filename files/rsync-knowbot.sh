@@ -4,7 +4,7 @@ TARGETDIR="/home/ubuntu/puppet"
 PUPPETDIR="$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" )"
 
 # now perform the sync to push data to the remote machine
-rsync -arvh $PUPPETDIR/ ubuntu@knowbot-app:$TARGETDIR --delete \
+rsync -arvh $PUPPETDIR/ ubuntu@knowbot:$TARGETDIR --delete \
     --exclude .git \
     --exclude .gitignore \
     --exclude .tmp \

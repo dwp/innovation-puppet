@@ -23,8 +23,7 @@ node 'knowbot-app'
     }
     # and run our docker compose
     docker_compose { '/opt/social-search-platform/docker-compose.yml':
-      ensure  => present,
-      options => '-f /opt/social-search-platform/docker-compose.prod.yml'
+      ensure  => present
     }
     
 }
