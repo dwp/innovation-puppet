@@ -101,9 +101,3 @@ node 'knowbot-app'
     }
     
 }
-
-# Node used for runnin the Spark / EMR enviroment for generating the social graph.
-node 'knowbot-spark'
-{
-    include ::bootstrap
-}
