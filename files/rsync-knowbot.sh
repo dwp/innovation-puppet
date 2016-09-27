@@ -12,6 +12,6 @@ rsync -avh $PUPPETDIR/ ubuntu@knowbot:$TARGETDIR/ --delete \
 
 # and push it to the local /etc/puppet directory
 ssh ubuntu@knowbot  << EOF
-sudo rsync -avh /home/ubuntu/puppet/ /etc/puppet/ --delete --exclude certname --exclude manifest -no-o
+sudo rsync -avh /home/ubuntu/puppet/ /etc/puppet/ --delete --exclude certname --exclude manifest --chown root:root
 sudo freepuppet-run
 EOF

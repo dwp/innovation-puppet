@@ -100,5 +100,10 @@ node 'knowbot-app'
           File["/var/social-search-platform/slack_export"]
       ]
     }
-    
+    # setup a cron to run the full sync every day at 00:00 and 12:00
+    cron { 'slack_export_full_sync':
+        ensure  => present,
+        command => '/usr/bin/docker-compose -f/opt/social-search-platform/docker-compose.yml -f/opt/social-search-platform/docker-compose.prod.yml run console slack:sync',
+        hour    => '*/12'
+    }
 }
