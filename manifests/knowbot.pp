@@ -5,8 +5,9 @@ node 'knowbot-app'
     include ::bootstrap
     # setup docker environment
     include ::docker
-    class { '::docker::compose' :
-        ensure => present
+    class { '::docker::compose':
+        ensure => present,
+        install_path => '/usr/bin'
     }
     
     # also install the acl library
