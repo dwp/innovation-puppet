@@ -87,8 +87,9 @@ node 'knowbot-app'
     }
     # hack together our file system acl
     exec { 'slack_export_acl':
-        command => '/usr/bin/setfacl -R -m u:www-data:rwX /var/social-search-platform/slack_export && /usr/bin/setfacl -dR -m u:www-data:rwX /var/social-search-platform/slack_export',
-        require => File['/var/social-search-platform/slack_export']
+        command     => '/usr/bin/setfacl -R -m u:www-data:rwX /var/social-search-platform/slack_export && /usr/bin/setfacl -dR -m u:www-data:rwX /var/social-search-platform/slack_export',
+        require     => File['/var/social-search-platform/slack_export'],
+        refreshonly => true
     }
     
     # and run our docker compose
