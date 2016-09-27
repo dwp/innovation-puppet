@@ -5,7 +5,7 @@ FORGE
       puppetlabs-apt (<= 3.0.0, >= 1.8.0)
       puppetlabs-stdlib (>= 4.1.0)
       stahnma-epel (>= 0.0.6)
-    puppetlabs-apt (2.2.2)
+    puppetlabs-apt (2.3.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.5.0)
     puppetlabs-ntp (4.2.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
@@ -24,7 +24,7 @@ GIT
 GIT
   remote: git@gitlab.itsshared.net:Innovation/puppet-module-freepuppet.git
   ref: master
-  sha: d85cb73f0b37b89f244da37c35ca0313d7309875
+  sha: 3b23e9ad173e5c50e1742f09b69c34332b76d67f
   specs:
     dwpinnovation-freepuppet (0.0.1)
 
