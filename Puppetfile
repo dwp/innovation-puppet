@@ -5,8 +5,8 @@ mod 'garethr-docker'
 
 # add our own internal modules
 mod 'dwpinnovation-bootstrap',
-  :git => 'git@gitlab.itsshared.net:Innovation/puppet-module-bootstrap.git',
+  :git => 'git@github.com:dwpdigitaltech/puppet-module-bootstrap.git',
   :ref => 'master'
 mod 'dwpinnovation-freepuppet',
-  :git => 'git@gitlab.itsshared.net:Innovation/puppet-module-freepuppet.git',
+  :git => 'git@github.com:dwpdigitaltech/puppet-module-freepuppet.git',
   :ref => 'master'

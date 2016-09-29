@@ -14,17 +14,17 @@ FORGE
       puppetlabs-stdlib (>= 3.0.0)
 
 GIT
-  remote: git@gitlab.itsshared.net:Innovation/puppet-module-bootstrap.git
+  remote: git@github.com:dwpdigitaltech/puppet-module-bootstrap.git
   ref: master
-  sha: dc206b4534d97b1c7fece14196b57ff2720fac09
+  sha: 7861afee342352ba7656f2af405632cf9bcf86d8
   specs:
     dwpinnovation-bootstrap (0.0.1)
       puppetlabs-ntp (>= 0)
 
 GIT
-  remote: git@gitlab.itsshared.net:Innovation/puppet-module-freepuppet.git
+  remote: git@github.com:dwpdigitaltech/puppet-module-freepuppet.git
   ref: master
-  sha: 3b23e9ad173e5c50e1742f09b69c34332b76d67f
+  sha: 84a30580c2070b487b4933b15ac3c583afcf27cf
   specs:
     dwpinnovation-freepuppet (0.0.1)
 
