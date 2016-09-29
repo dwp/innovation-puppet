@@ -92,15 +92,21 @@ node 'knowbot-app'
         refreshonly => true
     }
     
+    exec { 'social-search-platform_docker-compose-env':
+      command => "/bin/bash -c 'source /opt/social-search-platform/.env;'",
+    }
+    
     # and run our docker compose
     docker_compose { '/opt/social-search-platform/docker-compose.yml':
       ensure  => present,
       options => '-f/opt/social-search-platform/docker-compose.prod.yml',
       require => [
           File["/opt/social-search-platform"],
-          File["/var/social-search-platform/slack_export"]
+          File["/var/social-search-platform/slack_export"],
+          Exec["social-search-platform_docker-compose-env"]
       ]
     }
+    
     # setup a cron to run the full sync every day at 00:00 and 12:00
     cron { 'slack_export_full_sync':
         ensure  => present,
