@@ -92,6 +92,7 @@ node 'knowbot-app'
         refreshonly => true
     }
     
+    # adding a hack to ensure that we have the docker-compose env setup correctly
     exec { 'social-search-platform_docker-compose-env':
       command => "/bin/bash -c 'source /opt/social-search-platform/.env;'",
     }
