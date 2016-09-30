@@ -112,6 +112,7 @@ node 'knowbot-app'
     cron { 'slack_export_full_sync':
         ensure  => present,
         command => '/usr/bin/docker-compose -f/opt/social-search-platform/docker-compose.yml -f/opt/social-search-platform/docker-compose.prod.yml run console slack:sync',
-        hour    => '*/12'
+        hour    => '*/12',
+        minute  => '0'
     }
 }
