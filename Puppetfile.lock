@@ -16,7 +16,7 @@ FORGE
 GIT
   remote: git@github.com:dwpdigitaltech/puppet-module-bootstrap.git
   ref: master
-  sha: 7861afee342352ba7656f2af405632cf9bcf86d8
+  sha: 07d9dd9e896f5bc95304e5356d4a1f6741e16d17
   specs:
     dwpinnovation-bootstrap (0.0.1)
       puppetlabs-ntp (>= 0)
@@ -24,7 +24,7 @@ GIT
 GIT
   remote: git@github.com:dwpdigitaltech/puppet-module-freepuppet.git
   ref: master
-  sha: 84a30580c2070b487b4933b15ac3c583afcf27cf
+  sha: 613fe4203318ef4afee4c475d8eecc5f7d2bea78
   specs:
     dwpinnovation-freepuppet (0.0.1)
 
