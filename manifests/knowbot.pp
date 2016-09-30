@@ -10,6 +10,14 @@ node 'knowbot-app'
         install_path => '/usr/bin'
     }
     
+    # setup scripts to remove old containers at 07:00
+    cron { 'docker_cleanup':
+        ensure  => present,
+        command => 'docker rm -v $(docker ps -a -q -f status=exited) && docker rmi $(docker images -f "dangling=true" -q)',
+        hour    => '7',
+        minute  => '0'
+    }
+    
     # also install the acl library
     package { 'acl':
         ensure => present
