@@ -14,7 +14,7 @@ FORGE
       puppetlabs-stdlib (>= 3.0.0)
 
 GIT
-  remote: git@github.com:dwpdigitaltech/puppet-module-bootstrap.git
+  remote: https://github.com/dwpdigitaltech/puppet-module-bootstrap.git
   ref: master
   sha: 07d9dd9e896f5bc95304e5356d4a1f6741e16d17
   specs:
@@ -22,7 +22,7 @@ GIT
       puppetlabs-ntp (>= 0)
 
 GIT
-  remote: git@github.com:dwpdigitaltech/puppet-module-freepuppet.git
+  remote: https://github.com/dwpdigitaltech/puppet-module-freepuppet.git
   ref: 0.1.0
   sha: cb9a425540c40177a681424126b2738042f331bd
   specs:
