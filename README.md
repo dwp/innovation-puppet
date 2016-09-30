@@ -17,6 +17,6 @@ You can then make changes to the module code and deploy them.
 
 To deploy changes to puppet you (at this time) need to push the changes to the relevant servers via SSH.  A script has been setup to allow you to do this for knowbot, providing you have the relevant ssh keys and aliases installed in both /etc/hosts and ~/.ssh/config.
 
-You can find the details on how to do this in the [social-search-platform repository](https://gitlab.itsshared.net/Innovation/social-search-platform).
+You can find the details on how to do this in the [social-search-platform repository](https://github.com/dwpdigitaltech/social-search-platform).
 
 A script to automate the release process for knowbot can be found in the ```./files/rsync-knowbot.sh``` file.
