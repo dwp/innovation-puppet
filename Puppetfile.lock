@@ -15,18 +15,18 @@ FORGE
 
 GIT
   remote: https://github.com/dwpdigitaltech/puppet-module-bootstrap.git
-  ref: master
-  sha: 07d9dd9e896f5bc95304e5356d4a1f6741e16d17
+  ref: 0.1.0
+  sha: d881222b90cf716981f1e5453ba71e921210bb6f
   specs:
-    dwpinnovation-bootstrap (0.0.1)
+    dwpinnovation-bootstrap (0.1.0)
       puppetlabs-ntp (>= 0)
 
 GIT
   remote: https://github.com/dwpdigitaltech/puppet-module-freepuppet.git
-  ref: 0.1.0
-  sha: cb9a425540c40177a681424126b2738042f331bd
+  ref: 0.1.1
+  sha: 5b488b5066be2bda2b40ef6878dce019905f399b
   specs:
-    dwpinnovation-freepuppet (0.1.0)
+    dwpinnovation-freepuppet (0.1.1)
 
 DEPENDENCIES
   dwpinnovation-bootstrap (>= 0)
