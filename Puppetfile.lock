@@ -23,10 +23,10 @@ GIT
 
 GIT
   remote: git@github.com:dwpdigitaltech/puppet-module-freepuppet.git
-  ref: master
-  sha: 613fe4203318ef4afee4c475d8eecc5f7d2bea78
+  ref: 0.1.0
+  sha: cb9a425540c40177a681424126b2738042f331bd
   specs:
-    dwpinnovation-freepuppet (0.0.1)
+    dwpinnovation-freepuppet (0.1.0)
 
 DEPENDENCIES
   dwpinnovation-bootstrap (>= 0)

@@ -9,4 +9,4 @@ mod 'dwpinnovation-bootstrap',
   :ref => 'master'
 mod 'dwpinnovation-freepuppet',
   :git => 'git@github.com:dwpdigitaltech/puppet-module-freepuppet.git',
-  :ref => 'master'
+  :ref => '0.1.0'
