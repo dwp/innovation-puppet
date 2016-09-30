@@ -11,11 +11,17 @@ node 'knowbot-app'
     }
     
     # setup scripts to remove old containers at 07:00
-    cron { 'docker_cleanup':
+    cron { 'docker_container_cleanup':
         ensure  => present,
-        command => 'docker rm -v $(docker ps -a -q -f status=exited) && docker rmi $(docker images -f "dangling=true" -q)',
+        command => 'docker rm -v $(docker ps -a -q -f status=exited) > /dev/null 2>&1',
         hour    => '7',
         minute  => '0'
+    }
+    cron { 'docker_image_cleanup':
+        ensure  => present,
+        command => 'docker rmi $(docker images -f "dangling=true" -q) > /dev/null 2>&1',
+        hour    => '7',
+        minute  => '5'
     }
     
     # also install the acl library
@@ -119,7 +125,7 @@ node 'knowbot-app'
     # setup a cron to run the full sync every day at 00:00 and 12:00
     cron { 'slack_export_full_sync':
         ensure  => present,
-        command => '/usr/bin/docker-compose -f/opt/social-search-platform/docker-compose.yml -f/opt/social-search-platform/docker-compose.prod.yml run console slack:sync',
+        command => '/usr/bin/docker-compose -f/opt/social-search-platform/docker-compose.yml -f/opt/social-search-platform/docker-compose.prod.yml run console slack:sync --env=prod > /dev/null 2>&1',
         hour    => '*/12',
         minute  => '0'
     }
