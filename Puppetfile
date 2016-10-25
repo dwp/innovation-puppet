@@ -2,6 +2,8 @@ forge "https://forgeapi.puppetlabs.com"
 
 # include the libraries we require from the forge
 mod 'garethr-docker'
+mod 'puppet-nginx', '0.4.0'
+mod 'danzilio-letsencrypt', '1.0.0'
 
 # add our own internal modules
 mod 'dwpinnovation-bootstrap',

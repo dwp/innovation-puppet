@@ -10,6 +10,9 @@ node 'knowbot-app'
         install_path => '/usr/bin'
     }
     
+    # install web server and lets encrypt
+    class { 'nginx': }
+    
     # setup scripts to remove old containers at 07:00
     cron { 'docker_container_cleanup':
         ensure  => present,
