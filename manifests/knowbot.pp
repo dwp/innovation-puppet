@@ -13,6 +13,38 @@ node 'knowbot-app'
     # install web server and lets encrypt
     class { 'nginx': }
     
+    # setup user permissions
+    # create a knowbot user for managing file permissions on the local drives
+    group { 'www-pub':
+        ensure  => present,
+    }
+    user { 'knowbot':
+        ensure => present,
+        groups => 'www-pub',
+        require => Group['www-pub'],
+    }
+    user { 'www-data':
+        ensure => present,
+        groups => 'www-pub',
+        require => Group['www-pub'],
+    }
+    
+    # setup webroots
+    file { '/var/www':
+        ensure  => directory,
+        mode    => 775,
+        owner   => 'www-data',
+        group   => 'www-pub'
+        require => Group['www-pub']
+    }
+    file { '/var/www/innovation-knowbot.itsbeta.net':
+        ensure  => directory,
+        mode    => 775,
+        owner   => 'www-data',
+        group   => 'www-pub'
+        require => File['/var/www']
+    }
+    
     # setup scripts to remove old containers at 07:00
     cron { 'docker_container_cleanup':
         ensure  => present,
@@ -30,21 +62,6 @@ node 'knowbot-app'
     # also install the acl library
     package { 'acl':
         ensure => present
-    }
-    
-    # create a knowbot user for managing file permissions on the local drives
-    group { 'www-pub':
-        ensure  => present,
-    }
-    user { 'knowbot':
-        ensure => present,
-        groups => 'www-pub',
-        require => Group['www-pub'],
-    }
-    user { 'www-data':
-        ensure => present,
-        groups => 'www-pub',
-        require => Group['www-pub'],
     }
     
     # ensure directories are ready for social-search-platform code

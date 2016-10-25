@@ -1,0 +1,10 @@
+---
+nginx::nginx_upstreams:
+  'knowbot_upstream':
+    ensure: present
+    members:
+      - localhost:8080
+nginx::nginx_vhosts:
+  'knowbot-innovation.itsbeta.net':
+    proxy: 'http://knowbot_upstream'
+    ssl: true 
