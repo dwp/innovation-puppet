@@ -51,6 +51,11 @@ node 'knowbot-app'
         proxy       => 'http://knowbot_app',
         require  => File['/var/www/innovation-knowbot.itsbeta.net']
     }
+    nginx::resource::location { 'innovation-knowbot.itsbeat.net/.well-known':
+        vhost => 'innovation-knowbot.itsbeta.net',
+        www_root => '/var/www/innovation-knowbot.itsbeat.net/.well-known',
+        require => Letsencrypt::Certonly['innovation-knowbot.itsbeta.net']
+    }
     
     # and lets encrypt - staging
     class { ::letsencrypt:
