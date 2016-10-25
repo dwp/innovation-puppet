@@ -42,7 +42,7 @@ node 'knowbot-app'
         require => File['/var/www']
     }
 
-    # install web server and lets encrypt
+    # install web server
     class { 'nginx': }
     nginx::resource::upstream { 'knowbot_app':
         members => [ 'localhost:8080' ]
@@ -50,6 +50,21 @@ node 'knowbot-app'
     nginx::resource::vhost { 'innovation-knowbot.itsbeta.net':
         proxy       => 'http://knowbot_app',
         require  => File['/var/www/innovation-knowbot.itsbeta.net']
+    }
+    
+    # and lets encrypt - staging
+    class { ::letsencrypt:
+        unsafe_registration => true,
+        config => {
+            server => 'https://acme-staging.api.letsencrypt.org/directory',
+        }
+    }
+    letsencrypt::certonly { 'innovation-knowbot.itsbeta.net':
+      domains       => [ 'innovation-knowbot.itsbeta.net' ],
+      plugin        => 'webroot',
+      webroot_paths => [ '/var/www/innovation-knowbot.itsbeta.net' ],
+      manage_cron => true,
+      cron_success_command => '/usr/sbin/service nginx reload',
     }
     
     # setup scripts to remove old containers at 07:00
