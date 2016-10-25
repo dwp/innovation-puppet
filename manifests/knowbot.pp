@@ -51,7 +51,7 @@ node 'knowbot-app'
         proxy       => 'http://knowbot_app',
         require  => File['/var/www/innovation-knowbot.itsbeta.net']
     }
-    nginx::resource::location { '.well-known':
+    nginx::resource::location { '/.well-known/':
         vhost => 'innovation-knowbot.itsbeta.net',
         www_root => '/var/www/innovation-knowbot.itsbeta.net/'
     }
