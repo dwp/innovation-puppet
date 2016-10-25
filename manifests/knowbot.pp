@@ -55,7 +55,9 @@ node 'knowbot-app'
         vhost   => 'innovation-knowbot.itsbeta.net',
         proxy   => 'http://knowbot_app',
     }
-    nginx::resource::location { '/.well-known/': }
+    nginx::resource::location { '/.well-known/': 
+        vhost   => 'innovation-knowbot.itsbeta.net'
+    }
     
     # and lets encrypt - staging
     class { ::letsencrypt:
