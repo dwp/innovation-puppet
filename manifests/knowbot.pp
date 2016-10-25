@@ -56,9 +56,12 @@ node 'knowbot-app'
         www_root => '/var/www/innovation-knowbot.itsbeta.net/'
     }
     
-    # and lets encrypt - no email validation
+    # and lets encrypt - staging
     class { ::letsencrypt:
-        unsafe_registration => true
+        unsafe_registration => true,
+        config => {
+            server => 'https://acme-v01.api.letsencrypt.org/directory',
+        }
     }
     letsencrypt::certonly { 'innovation-knowbot.itsbeta.net':
       domains       => [ 'innovation-knowbot.itsbeta.net' ],
