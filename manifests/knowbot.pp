@@ -10,9 +10,6 @@ node 'knowbot-app'
         install_path => '/usr/bin'
     }
     
-    # install web server and lets encrypt
-    class { 'nginx': }
-    
     # setup user permissions
     # create a knowbot user for managing file permissions on the local drives
     group { 'www-pub':
@@ -43,6 +40,16 @@ node 'knowbot-app'
         owner   => 'www-data',
         group   => 'www-pub',
         require => File['/var/www']
+    }
+
+    # install web server and lets encrypt
+    class { 'nginx': }
+    nginx::resource::upstream { 'knowbot_app':
+        members => [ 'localhost:8080' ]
+    }
+    nginx::resource::vhost { 'innovation-knowbot.itsbeta.net':
+        proxy       => 'http://knowbot_app',
+        require  => File['/var/www/innovation-knowbot.itsbeta.net']
     }
     
     # setup scripts to remove old containers at 07:00
