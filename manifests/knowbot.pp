@@ -34,14 +34,14 @@ node 'knowbot-app'
         ensure  => directory,
         mode    => 775,
         owner   => 'www-data',
-        group   => 'www-pub'
+        group   => 'www-pub',
         require => Group['www-pub']
     }
     file { '/var/www/innovation-knowbot.itsbeta.net':
         ensure  => directory,
         mode    => 775,
         owner   => 'www-data',
-        group   => 'www-pub'
+        group   => 'www-pub',
         require => File['/var/www']
     }
     
