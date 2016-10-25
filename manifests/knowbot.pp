@@ -63,8 +63,7 @@ node 'knowbot-app'
       domains       => [ 'innovation-knowbot.itsbeta.net' ],
       plugin        => 'webroot',
       webroot_paths => [ '/var/www/innovation-knowbot.itsbeta.net' ],
-      manage_cron => true,
-      cron_success_command => '/usr/sbin/service nginx reload',
+      manage_cron   => true
     }
     
     # setup scripts to remove old containers at 07:00
