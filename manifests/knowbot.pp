@@ -54,7 +54,7 @@ node 'knowbot-app'
     nginx::resource::location { 'innovation-knowbot.itsbeat.net/.well-known':
         vhost => 'innovation-knowbot.itsbeta.net',
         www_root => '/var/www/innovation-knowbot.itsbeat.net/.well-known',
-        require => Letsencrypt::Certonly['innovation-knowbot.itsbeta.net']
+        require => Nginx::Resource::Vhost['innovation-knowbot.itsbeta.net']
     }
     
     # and lets encrypt - staging
