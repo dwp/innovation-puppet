@@ -48,7 +48,10 @@ node 'knowbot-app'
         members => [ 'localhost:8080' ]
     }
     nginx::resource::vhost { 'innovation-knowbot.itsbeta.net':
-        proxy       => 'http://knowbot_app',
+        proxy    => 'http://knowbot_app',
+        ssl      => true,
+        ssl_cert => '/etc/letsencrypt/live/innovation-knowbot.itsbeta.net/fullchain.pem',
+        ssl_key  => '/etc/letsencrypt/live/innovation-knowbot.itsbeta.net/privkey.pem',
         require  => File['/var/www/innovation-knowbot.itsbeta.net']
     }
     nginx::resource::location { '/.well-known/':
