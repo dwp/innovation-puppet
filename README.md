@@ -1,10 +1,10 @@
 # Innovation Puppet
 
-This is a basic Puppet repository used for setting up and configuring the Innovation teams technology demonstrators.
+This is a basic Puppet version 3.x repository used for setting up and configuring the Innovation teams technology demonstrators.
 
 ### Installation
 
-To make use of this project you will need Puppet and the librarian-puppet gem installed, this can most easily be achieved via the following commands on OSX.
+To make use of this project you will need Puppet 3.x and the librarian-puppet gem installed, this can most easily be achieved via the following commands on OSX.
 
 1. Download and install puppet-agent from the offical [puppet website](https://docs.puppet.com/puppet/latest/reference/install_osx.html).
 2. Install librarian-puppet via ```gem install librarian-puppet```
